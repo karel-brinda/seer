@@ -41,4 +41,4 @@ filter_seer
 armadillo-*
 mlpack-1.0.*
 boost_1_*
-gzstream
+#gzstream
