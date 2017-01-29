@@ -2,17 +2,19 @@ export PREFIX=${HOME}/software
 export BINDIR=$(PREFIX)/bin
 
 all:
-	cd src && $(MAKE) all
+	$(MAKE) -C gzstream
+	$(MAKE) -C src all
 
 clean:
-	cd src && $(MAKE) clean
-	cd test && $(MAKE) clean
+	$(MAKE) -C src clean
+	$(MAKE) -C test clean
+	$(MAKE) -C gzstream clean
 
 install: all
-	cd src && $(MAKE) install
+	$(MAKE) -C src install
 
 test: all
-	cd test && $(MAKE) test
+	$(MAKE) -C test
 
 .PHONY: all clean install test
 
